@@ -1,0 +1,8 @@
+{
+	"chat.tools.terminal.autoApprove": {
+		"/^python -c \"import ast; ast\\.parse\\(open\\('diff_tool\\.py', encoding='utf-8'\\)\\.read\\(\\)\\); print\\('OK'\\)\"$/": {
+			"approve": true,
+			"matchCommandLine": true
+		}
+	}
+}
