@@ -19,7 +19,7 @@ echo [2/2] EXEをビルド中...
 pyinstaller ^
     --onefile ^
     --windowed ^
-    --name "url-diff-tool" ^
+    --name "html-diff-tool" ^
     --hidden-import=requests ^
     --hidden-import=certifi ^
     --hidden-import=charset_normalizer ^
