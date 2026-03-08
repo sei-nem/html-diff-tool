@@ -24,8 +24,8 @@ class ResultsTree(ttk.LabelFrame):
         self._tree = ttk.Treeview(self, columns=cols, show="headings", height=8)
 
         self._tree.heading("no",         text="No.")
-        self._tree.heading("left_url",   text="比較元URL（左）")
-        self._tree.heading("right_url",  text="比較先URL（右）")
+        self._tree.heading("left_url",   text="比較元URL")
+        self._tree.heading("right_url",  text="比較先URL")
         self._tree.heading("status",     text="取得状態")
         self._tree.heading("diff_count", text="差分行数")
 
