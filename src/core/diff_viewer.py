@@ -40,6 +40,7 @@ class DiffViewer:
             context=True,
             numlines=5,
         )
+        html = html.replace("charset=ISO-8859-1", "charset=UTF-8")
         html = html.replace("</head>", _DIFF_STYLE + "\n</head>")
 
         with tempfile.NamedTemporaryFile(

@@ -2,6 +2,7 @@
 
 import tkinter as tk
 from tkinter import ttk
+from urllib.parse import urlparse
 
 
 class UrlInputPanel(ttk.LabelFrame):
@@ -32,8 +33,13 @@ class UrlInputPanel(ttk.LabelFrame):
             text.pack(fill=tk.BOTH, expand=True)
             setattr(self, attr, text)
 
+    @staticmethod
+    def _is_url(line: str) -> bool:
+        parsed = urlparse(line)
+        return parsed.scheme in ("http", "https") and bool(parsed.netloc)
+
     def get_left_urls(self) -> list[str]:
-        return [u.strip() for u in self._left_text.get("1.0", tk.END).splitlines() if u.strip()]
+        return [u.strip() for u in self._left_text.get("1.0", tk.END).splitlines() if self._is_url(u.strip())]
 
     def get_right_urls(self) -> list[str]:
-        return [u.strip() for u in self._right_text.get("1.0", tk.END).splitlines() if u.strip()]
+        return [u.strip() for u in self._right_text.get("1.0", tk.END).splitlines() if self._is_url(u.strip())]
