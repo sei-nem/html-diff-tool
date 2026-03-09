@@ -7,14 +7,14 @@ import requests
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-from core.comparator import HtmlComparator
-from core.diff_viewer import DiffViewer
-from core.fetcher import HtmlFetcher
-from core.url_pairer import UrlPairer
-from ui.action_bar import ActionBar
-from ui.options_panel import OptionsPanel
-from ui.results_tree import ResultsTree
-from ui.url_input_panel import UrlInputPanel
+from src.core.comparator import HtmlComparator
+from src.core.diff_viewer import DiffViewer
+from src.core.fetcher import HtmlFetcher
+from src.core.url_pairer import UrlPairer
+from src.ui.action_bar import ActionBar
+from src.ui.options_panel import OptionsPanel
+from src.ui.results_tree import ResultsTree
+from src.ui.url_input_panel import UrlInputPanel
 
 
 class HtmlDiffApp:

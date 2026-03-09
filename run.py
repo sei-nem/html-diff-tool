@@ -20,7 +20,7 @@ PyInstallerで単一EXEにビルド可能。
 
 import tkinter as tk
 
-from app import HtmlDiffApp
+from src.app import HtmlDiffApp
 
 
 # --------------------------------------------------------------------------- #
