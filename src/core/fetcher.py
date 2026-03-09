@@ -18,4 +18,8 @@ class HtmlFetcher:
             verify=True,
         )
         resp.raise_for_status()
+        # HTTP ヘッダに charset がない場合 requests は ISO-8859-1 をデフォルトに使う。
+        # その場合は charset_normalizer/chardet による検出結果で上書きして日本語化けを防ぐ。
+        if resp.encoding and resp.encoding.upper() in ("ISO-8859-1", "LATIN-1"):
+            resp.encoding = resp.apparent_encoding
         return resp.text
